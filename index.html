@@ -20,12 +20,13 @@
         }
         .text-brand-blue { color: var(--greenland-blue); }
         .bg-brand-red { background-color: var(--greenland-red); }
+        .border-brand-red { border-color: var(--greenland-red); }
         .bg-gradient-brand {
             background: linear-gradient(90deg, var(--light-cyan) 0%, var(--greenland-blue) 100%);
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans leading-relaxed">
+<body class="bg-slate-50 text-slate-900 font-sans leading-relaxed flex flex-col min-h-screen">
 
     <header class="bg-gradient-brand text-white py-12 px-4 shadow-lg text-center">
         <nav class="mb-8 font-bold">
@@ -33,12 +34,12 @@
             <a href="en.html" class="opacity-70 hover:opacity-100 mx-2 transition-opacity">EN</a>
         </nav>
         <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">Opération Groënland</h1>
-        <p class="text-xl md:text-2xl font-light max-w-4xl mx-auto italic">
+        <p class="text-xl md:text-2xl font-light max-w-4xl mx-auto italic leading-tight">
             Participez à 3 actions symboliques et pacifiques pour soutenir les Groënlandais-es, affirmer notre indépendance européenne et notre attachement au droit international face aux menaces extérieures.
         </p>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 py-12">
+    <main class="max-w-6xl mx-auto px-4 py-12 flex-grow">
         
         <section class="mb-16">
             <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -48,7 +49,7 @@
                         <p class="text-lg leading-relaxed text-slate-700">
                             Face aux menaces pesant sur le Groënland et à l'invisibilisation de son peuple autonome, nous, citoyen·nes européen·nes, disons <strong>STOP</strong>. Il est temps de faire respecter les règles internationales et l'autonomie des peuples.
                         </p>
-                        <p class="text-sm italic text-slate-500 mt-4 leading-snug">
+                        <p class="text-sm italic text-slate-500 mt-4 leading-relaxed">
                             Cette initiative n'est pas politique et ne demande aucun don financier, c'est l'appel de citoyens du peuple européen à leurs cousins américains et l'expression de leur soutien à leurs amis Groënlandais.
                         </p>
                     </div>
@@ -73,6 +74,8 @@
                 </div>
             </div>
         </section>
+
+        <hr class="border-slate-200 mb-16">
 
         <section class="mb-16">
             <h2 class="text-3xl font-bold mb-10 text-center uppercase tracking-widest">3 Actions pour Agir</h2>
@@ -103,10 +106,10 @@
                         <p>Nous diffusons également une tribune citoyenne auprès des grands médias américains.</p>
                     </div>
                     <div class="mt-8 space-y-3">
-                        <a href="#" class="block w-full text-center bg-slate-100 hover:bg-slate-200 text-brand-blue font-bold py-3 rounded-xl">Voir la tribune (PDF)</a>
+                        <a href="#" class="block w-full text-center bg-slate-100 hover:bg-slate-200 text-brand-blue font-bold py-3 rounded-xl transition-colors">Voir la tribune (PDF)</a>
                         <div class="flex gap-2 text-xs">
-                            <a href="#" class="flex-1 text-center bg-blue-50 text-blue-600 font-bold py-2 rounded-lg">Partager sur X</a>
-                            <a href="#" class="flex-1 text-center bg-blue-50 text-blue-800 font-bold py-2 rounded-lg">Partager sur FB</a>
+                            <a href="#" class="flex-1 text-center bg-blue-50 text-blue-600 font-bold py-2 rounded-lg hover:bg-blue-100 transition-colors">Partager sur X</a>
+                            <a href="#" class="flex-1 text-center bg-blue-50 text-blue-800 font-bold py-2 rounded-lg hover:bg-blue-100 transition-colors">Partager sur FB</a>
                         </div>
                     </div>
                 </div>
@@ -114,7 +117,7 @@
                 <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-brand-blue flex flex-col">
                     <h4 class="font-bold text-2xl mb-4 uppercase text-brand-blue">Hands Off Greenland</h4>
                     <div class="text-slate-700 space-y-4 flex-grow">
-                        <p><strong>Envoyez</strong> de courts messages vidéo de soutien via notre carte contributive pour refuser la loi du plus fort et appeler au respect de l'autonomie. C'est tout simple : criez "HANDS OFF GREENLAND" en vous filmant seul·e ou avec vos amis !</p>
+                        <p><strong>Envoyez</strong> de courts messages vidéo de soutien via notre carte contributive pour refuser la loi du plus fort. C'est tout simple : criez "HANDS OFF GREENLAND" en vous filmant seul·e ou avec vos amis !</p>
                     </div>
                     <div class="mt-8">
                         <a href="#" class="block w-full text-center bg-brand-red hover:opacity-90 text-white font-bold py-4 rounded-xl shadow-lg transition-transform hover:scale-105">Participer sur Padlet</a>
@@ -124,10 +127,10 @@
             </div>
         </section>
 
-        <section class="max-w-2xl mx-auto bg-slate-200 p-8 rounded-3xl text-center shadow-inner">
+        <section class="max-w-2xl mx-auto bg-slate-200 p-8 rounded-3xl text-center shadow-inner mb-12">
             <h3 class="text-xl font-bold mb-2 uppercase tracking-wide">Une question ?</h3>
             <p class="text-slate-600 mb-4 italic">Contactez le collectif <strong>Greenland Eurofriends</strong></p>
-            <a href="mailto:greenland-eurofriends@proton.me" class="text-xl md:text-2xl font-black text-brand-blue hover:underline">
+            <a href="mailto:greenland-eurofriends@proton.me" class="text-xl md:text-2xl font-black text-brand-blue hover:underline transition-all">
                 greenland-eurofriends@proton.me
             </a>
         </section>
@@ -135,7 +138,7 @@
     </main>
 
     <footer class="bg-gradient-brand text-white py-16 text-center shadow-inner">
-        <p class="text-4xl md:text-5xl font-serif italic mb-4 tracking-widest text-shadow">Peqatigiilluta</p>
+        <p class="text-4xl md:text-5xl font-serif italic mb-4 tracking-widest">Peqatigiilluta</p>
         <p class="text-sm opacity-80 uppercase tracking-[0.3em] font-bold">(Restons forts ensemble !)</p>
     </footer>
 
