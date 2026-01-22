@@ -24,17 +24,6 @@
         .bg-gradient-brand {
             background: linear-gradient(90deg, var(--light-cyan) 0%, var(--greenland-blue) 100%);
         }
-        /* Style pour les images rondes avec bordure rouge Groenland */
-        .action-circle {
-            width: 150px;
-            height: 150px;
-            border: 6px solid var(--greenland-red);
-            border-radius: 9999px;
-            object-fit: cover;
-            margin: 0 auto 1.5rem;
-            display: block;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans leading-relaxed flex flex-col min-h-screen">
@@ -55,7 +44,7 @@
         <section class="mb-16">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
-                    <h2 class="text-3xl font-bold text-brand-blue uppercase">Pourquoi agir ?</h2>
+                    <h2 class="text-3xl font-bold text-brand-blue uppercase text-shadow-sm">Pourquoi agir ?</h2>
                     <div class="bg-white p-8 rounded-2xl shadow-sm border-l-8 border-brand-red">
                         <p class="text-lg leading-relaxed text-slate-700">
                             Face aux menaces pesant sur le Groënland et à l'invisibilisation de son peuple autonome, nous, citoyen·nes européen·nes, disons <strong>STOP</strong>. Il est temps de faire respecter les règles internationales et l'autonomie des peuples.
@@ -92,17 +81,17 @@
             <h2 class="text-3xl font-bold mb-10 text-center uppercase tracking-widest">3 Actions pour Agir</h2>
             <div class="grid lg:grid-cols-3 gap-8">
                 
-                <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-brand-blue flex flex-col text-center">
-                    <img src="img/greenland-penpals.jpg" alt="Greenland Penpals" class="action-circle">
+                <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-brand-blue flex flex-col">
                     <h4 class="font-bold text-2xl mb-4 uppercase text-brand-blue">Greenland Penpals</h4>
+                    <img src="img/greenland-penpals.jpg" alt="Greenland Penpals" class="w-full h-48 object-cover rounded-xl mb-6 shadow-sm">
                     <div class="text-slate-700 space-y-4 flex-grow text-left">
                         <p>Le but est de collecter des cartes postales d'Europe avec des messages de soutien aux Groënlandais.</p>
                         <p>Achetez une carte classique de votre coin d'Europe, écrivez un message simple ou recopiez l'un des modèles de la présentation.</p>
                         <p>Envoi groupé le <strong>14 février</strong> pour la fête des amis.</p>
                     </div>
                     <div class="mt-8 pt-6 border-t border-slate-100">
-                        <p class="font-bold text-sm uppercase text-slate-500 mb-2">Envoyez vos cartes à :</p>
-                        <address class="not-italic bg-slate-50 p-4 rounded-xl text-brand-blue font-bold">
+                        <p class="font-bold text-sm uppercase text-slate-500 mb-2 text-center">Envoyez vos cartes à :</p>
+                        <address class="not-italic bg-slate-50 p-4 rounded-xl text-brand-blue font-bold text-center">
                             Greenland Penpals<br>
                             34 rue abbé Herbert<br>
                             85000 La Roche-sur-Yon<br>
@@ -111,9 +100,9 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-brand-blue flex flex-col text-center">
-                    <img src="img/no-deal.jpg" alt="No Deal" class="action-circle">
+                <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-brand-blue flex flex-col">
                     <h4 class="font-bold text-2xl mb-4 uppercase text-brand-blue">No Deal</h4>
+                    <img src="img/no-deal.jpg" alt="No Deal" class="w-full h-48 object-cover rounded-xl mb-6 shadow-sm">
                     <div class="text-slate-700 space-y-4 flex-grow text-left">
                         <p>Mobilisation digitale des citoyens américains pour interpeller leurs dirigeants de peuple à peuple sur les réseaux sociaux.</p>
                         <p>Nous diffusons également une tribune citoyenne auprès des grands médias américains.</p>
@@ -127,9 +116,9 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-brand-blue flex flex-col text-center">
-                    <img src="img/hands-off-videos.jpg" alt="Hands Off Greenland" class="action-circle">
+                <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-brand-blue flex flex-col">
                     <h4 class="font-bold text-2xl mb-4 uppercase text-brand-blue">Hands Off Greenland</h4>
+                    <img src="img/hands-off-videos.jpg" alt="Hands Off Greenland" class="w-full h-48 object-cover rounded-xl mb-6 shadow-sm">
                     <div class="text-slate-700 space-y-4 flex-grow text-left">
                         <p><strong>Envoyez</strong> de courts messages vidéo de soutien via notre carte contributive pour refuser la loi du plus fort. Criez "HANDS OFF GREENLAND" seul·e ou avec vos amis !</p>
                     </div>
