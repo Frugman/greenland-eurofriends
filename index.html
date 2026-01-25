@@ -110,11 +110,14 @@
             border: 12px solid var(--white);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             transform: rotate(3deg);
-            max-width: 100%;
+            max-width: 350px; /* Reduced size as requested */
+            width: 100%;
             border-radius: 5px;
         }
 
         /* PARTIE 2: MEDIA */
+        .centered-h3 { text-align: center; }
+
         .video-wrapper {
             position: relative;
             padding-bottom: 56.25%;
@@ -157,7 +160,10 @@
 
         .action-col-1 { flex: 1; text-align: center; }
         .action-col-2 { flex: 2; }
-        .action-col-3 { flex: 1.2; }
+        .action-col-3 { flex: 1.2; display: flex; flex-direction: column; }
+
+        /* Vertical centering for Col 3 - Encart 1 */
+        .v-center { justify-content: center; }
 
         .action-card h3 { font-size: 1.6rem; }
         .action-card img { width: 100%; border-radius: 15px; margin-top: 10px; }
@@ -181,6 +187,7 @@
             font-weight: bold;
             transition: 0.3s;
             text-align: center;
+            align-self: center;
         }
 
         .btn-action:hover { background-color: #b00a2b; transform: translateY(-2px); }
@@ -203,13 +210,15 @@
             border-left: 4px solid var(--blue-dark);
         }
 
+        .doc-link-container { margin-top: 20px; }
         .doc-link {
             display: block;
             margin-top: 15px;
             color: var(--red);
             font-weight: bold;
-            text-decoration: underline;
+            text-decoration: none;
         }
+        .doc-link span { text-decoration: underline; }
 
         /* CONTACT BLOCK */
         .contact-section {
@@ -248,15 +257,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
         }
 
+        .footer-logo { flex: 1; }
         .footer-logo img { height: 100px; }
-        .footer-motto { text-align: right; }
+        
+        .footer-disclaimer { 
+            flex: 2; 
+            text-align: center; 
+            font-size: 0.85rem; 
+            line-height: 1.4;
+            padding: 0 20px;
+        }
+
+        .footer-motto { flex: 1; text-align: right; }
         .footer-motto h4 { font-size: 2.2rem; margin: 0; }
 
         @media (max-width: 900px) {
             .row-2-col, .action-card { flex-direction: column; }
             .action-col-1, .action-col-2, .action-col-3 { width: 100%; }
+            footer { flex-direction: column; text-align: center; }
+            .footer-motto { text-align: center; }
         }
     </style>
 </head>
@@ -287,13 +309,13 @@
 
         <section class="row-2-col">
             <div class="col">
-                <h3>Understand it all in 2 minutes</h3>
+                <h3 class="centered-h3">Understand it all in 2 minutes</h3>
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/tcoZEwUf7k0" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="col">
-                <h3>Full operation overview</h3>
+                <h3 class="centered-h3">Full operation overview</h3>
                 <iframe class="scribd_iframe_embed" title="Operation Greenland EN" src="https://www.scribd.com/embeds/986957960/content?start_page=1&view_mode=slideshow&access_key=key-mJkp9xz3elHKKR2Ax8WN" data-auto-height="true" data-aspect-ratio="1.7790927021696252" scrolling="no" width="100%" height="400" frameborder="0" ></iframe>
             </div>
         </section>
@@ -310,7 +332,7 @@
                 <p>Buy or create a postcard from where you live, write a simple message, or copy one of the templates in the presentation above. Do it with your children, your friends, and your loved ones, then place the cards in an envelope to be sent to the address shown here.</p>
                 <p>Please hurry, as we would like to ship them out in time for February 14th (Friends' Day).</p>
             </div>
-            <div class="action-col-3">
+            <div class="action-col-3 v-center">
                 <div class="address-box">
                     Greenland Penpals<br>
                     34 rue abbé Herbert<br>
@@ -328,9 +350,9 @@
             <div class="action-col-2">
                 <p>We invite all American and European citizens to share the posts below on their social media networks to call on their leaders and reaffirm our friendship, from people to people.</p>
                 <p>We are also distributing a citizens' op-ed of friendship to the American people to major American and European media outlets.</p>
-                <div style="margin-top: 20px;">
-                    <a href="doc/citizenopedus.pdf" class="doc-link">📄 Citizen Op-Ed to our American friends</a>
-                    <a href="doc/citizenEUinstitutions.pdf" class="doc-link">📄 Call to EU Institutions</a>
+                <div class="doc-link-container">
+                    <div class="doc-link">📄 <a href="doc/citizenopedus.pdf" target="_blank" style="color:var(--red);"><span>Citizen Op-Ed to our American friends</span></a></div>
+                    <div class="doc-link">📄 <a href="doc/citizenEUinstitutions.pdf" target="_blank" style="color:var(--red);"><span>Call to EU Institutions</span></a></div>
                 </div>
             </div>
             <div class="action-col-3">
@@ -355,7 +377,7 @@
                 <p>Send short video messages of support through our collaborative map to reject the "law of the strongest". Use your smartphone to record yourself for a few seconds shouting "HANDS OFF GREENLAND" or "HANDS OFF MR. TRUMP"!</p>
                 <p>Go to Padlet, enter your city, and upload your video. Let’s light up this world map with thousands of pins!</p>
             </div>
-            <div class="action-col-3" style="display: flex; align-items: center; justify-content: center;">
+            <div class="action-col-3 v-center">
                 <a href="https://padlet.com/greenlandeurofriends/handsoff" class="btn-action" target="_blank">Discover the map and join in!</a>
             </div>
         </div>
@@ -363,17 +385,15 @@
         <section class="contact-section">
             <h3>Any questions?</h3>
             <p>Contact the Greenland Eurofriends collective<br>
-            <a href="mailto:greenland-eurofriends@proton.me" style="color: var(--blue-dark); font-weight: bold;">greenland-eurofriends@proton.me</a></p>
+            <a href="mailto:greenland-eurofriends@proton.me" style="color: var(--blue-dark); font-weight: bold;" target="_blank">greenland-eurofriends@proton.me</a></p>
             
             <div class="social-row">
-                <span>Join Us / Rejoignez-nous :</span>
+                <span>Join Us :</span>
                 <a href="https://www.instagram.com/greenlandeurofriends/" class="social-icon-box" target="_blank">
                     <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.332 3.608 1.308.975.975 1.247 2.242 1.308 3.607.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.332 2.633-1.308 3.608-.975.975-2.242 1.247-3.607 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.332-3.608-1.308-.975-.975-1.247-2.242-1.308-3.607-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.332-2.633 1.308-3.608.975-.975 2.242-1.247 3.607-1.308 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    Instagram
                 </a>
                 <a href="https://x.com/GEurofriends" class="social-icon-box" target="_blank">
                     <svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644z"/></svg>
-                    X
                 </a>
             </div>
         </section>
@@ -383,6 +403,9 @@
     <footer>
         <div class="footer-logo">
             <img src="img/hands-off-greenland.png" alt="Hands Off Greenland Logo">
+        </div>
+        <div class="footer-disclaimer">
+            <p>We put this "commando" operation together in just a few days using only the resources available to everyday anonymous citizens. We hope everything works smoothly, but clearly, WE ARE COUNTING ON YOU to amplify this call from the heart. So please—share, share, share!</p>
         </div>
         <div class="footer-motto">
             <h4>Peqatigiilluta</h4>
