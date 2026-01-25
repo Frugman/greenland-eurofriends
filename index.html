@@ -1,156 +1,393 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opération Groenland - Soutien International</title>
     
-    <meta property="og:title" content="Opération Groenland" />
-    <meta property="og:description" content="Participez à 3 actions symboliques et pacifiques pour soutenir les Groënlandais-es et affirmer notre indépendance européenne face aux menaces extérieures." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://greenland-eurofriends.vercel.app/" />
-    <meta property="og:image" content="https://greenland-eurofriends.vercel.app/img/greenland-eurofriends-fr.jpg" />
-    
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Operation Greenland</title>
+    <meta name="description" content="Join 3 symbolic and peaceful actions to stand with the people of Greenland, assert our European independence, and uphold our commitment to international law.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Operation Greenland">
+    <meta property="og:description" content="Join 3 symbolic and peaceful actions to stand with the people of Greenland, assert our European independence, and uphold our commitment to international law.">
+    <meta property="og:image" content="img/greenland-eurofriends-en.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Operation Greenland">
+    <meta name="twitter:description" content="Join 3 symbolic and peaceful actions to stand with the people of Greenland, assert our European independence, and uphold our commitment to international law.">
+    <meta name="twitter:image" content="img/greenland-eurofriends-en.jpg">
+
     <style>
         :root {
-            --greenland-blue: #0077c8;
-            --greenland-red: #D00C33; 
-            --light-cyan: #43d4e6;
+            --white: #FFFFFF;
+            --bg-gray: #e5e7eb;
+            --blue-light: #7dc5f5;
+            --blue-dark: #0370b9;
+            --red: #D00C33;
+            --black: #181818;
+            /* Interpretation of "25%" as a generous 25px radius for a modern rounded look */
+            --radius: 25px;
         }
-        .text-brand-blue { color: var(--greenland-blue); }
-        .bg-brand-red { background-color: var(--greenland-red); }
-        .border-brand-red { border-color: var(--greenland-red); }
-        .bg-gradient-brand {
-            background: linear-gradient(90deg, var(--light-cyan) 0%, var(--greenland-blue) 100%);
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(to right, var(--blue-light), var(--blue-dark));
+            color: var(--white);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .lang-switch a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+
+        .lang-switch a:hover { text-decoration: underline; }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-style: italic;
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 20px auto 0 auto;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* FLEXBOX GRID */
+        .row-2-col {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: flex-start;
+        }
+
+        .col { flex: 1; }
+
+        h2 { color: var(--blue-dark); text-transform: uppercase; font-size: 2rem; }
+        h3 { color: var(--blue-dark); text-transform: uppercase; margin-top: 0; }
+
+        /* PARTIE 1: WHY */
+        .quote-box {
+            border-left: 10px solid var(--red);
+            padding: 20px 30px;
+            background: var(--white);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .note-italic {
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .img-slanted {
+            border: 12px solid var(--white);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: rotate(3deg);
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        /* PARTIE 2: MEDIA */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        /* PARTIE 3: ACTIONS */
+        .section-title-center {
+            text-align: center;
+            font-size: 2.8rem;
+            margin: 80px 0 40px;
+        }
+
+        .action-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            display: flex;
+            gap: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-card::before {
+            content: "";
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 8px;
+            background-color: var(--red);
+        }
+
+        .action-col-1 { flex: 1; text-align: center; }
+        .action-col-2 { flex: 2; }
+        .action-col-3 { flex: 1.2; }
+
+        .action-card h3 { font-size: 1.6rem; }
+        .action-card img { width: 100%; border-radius: 15px; margin-top: 10px; }
+
+        .address-box {
+            background: #fdfdfd;
+            border: 2px dashed var(--blue-dark);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .btn-action {
+            background-color: var(--red);
+            color: var(--white);
+            padding: 18px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .btn-action:hover { background-color: #b00a2b; transform: translateY(-2px); }
+
+        .social-link-list a {
+            display: inline-block;
+            margin: 10px 10px 10px 0;
+            color: var(--blue-dark);
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .quote-text-box {
+            font-style: italic;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            font-size: 0.9rem;
+            border-left: 4px solid var(--blue-dark);
+        }
+
+        .doc-link {
+            display: block;
+            margin-top: 15px;
+            color: var(--red);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* CONTACT BLOCK */
+        .contact-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .social-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .social-icon-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--black);
+            font-weight: bold;
+        }
+
+        .social-icon-box svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--black);
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(to right, var(--blue-light), var(--blue-dark));
+            color: var(--white);
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo img { height: 100px; }
+        .footer-motto { text-align: right; }
+        .footer-motto h4 { font-size: 2.2rem; margin: 0; }
+
+        @media (max-width: 900px) {
+            .row-2-col, .action-card { flex-direction: column; }
+            .action-col-1, .action-col-2, .action-col-3 { width: 100%; }
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans leading-relaxed flex flex-col min-h-screen">
+<body>
 
-    <header class="bg-gradient-brand text-white py-12 px-4 shadow-lg text-center">
-        <nav class="mb-8 font-bold">
-            <span class="border-b-2 border-white pb-1 mx-2 cursor-default">FR</span>
-            <a href="en.html" class="opacity-70 hover:opacity-100 mx-2 transition-opacity">EN</a>
-        </nav>
-        <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">Opération Groënland</h1>
-        <p class="text-xl md:text-2xl font-light max-w-4xl mx-auto italic leading-tight">
-            Participez à 3 actions symboliques et pacifiques pour soutenir les Groënlandais·es, affirmer notre indépendance européenne et notre attachement au droit international face aux menaces extérieures.
-        </p>
+    <header>
+        <div class="lang-switch">
+            <a href="index.html">ENGLISH</a> / <a href="accueil.html">FRANCAIS</a>
+        </div>
+        <h1>Operation Greenland</h1>
+        <p>Join 3 symbolic and peaceful actions to stand with the people of Greenland, assert our European independence, and uphold our commitment to international law in the face of external threats.</p>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-12 flex-grow">
+    <div class="container">
         
-        <section class="mb-16">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <h2 class="text-3xl font-bold text-brand-blue uppercase text-shadow-sm">Pourquoi agir ?</h2>
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border-l-8 border-brand-red">
-                        <p class="text-lg leading-relaxed text-slate-700">
-                            Face aux menaces pesant sur le Groënland et à l'invisibilisation de son peuple autonome, nous, citoyen·nes européen·nes, disons <strong>STOP</strong>. Il est temps de faire respecter les règles internationales et l'autonomie des peuples.
-                        </p>
-                        <p class="text-sm italic text-slate-500 mt-4 leading-relaxed">
-                            Cette initiative n'est pas politique et ne demande aucun don financier, c'est l'appel sincères de citoyens du peuple européen à leurs cousins américains et l'expression de leur soutien à leurs amis Groënlandais.
-                        </p>
-                    </div>
+        <section class="row-2-col">
+            <div class="col">
+                <h2>Why it matters ?</h2>
+                <div class="quote-box">
+                    In the face of threats to Greenland, the silencing of its autonomous people, and Donald Trump’s imperialist foreign policy, we, as European citizens, say STOP. It is time to uphold international law and the right of all peoples to self-determination.
                 </div>
-                <div class="bg-white p-2 rounded-2xl shadow-xl rotate-1">
-                    <img src="img/greenland-eurofriends-fr.jpg" alt="Opération Groenland - Soutien" class="w-full h-auto rounded-xl">
-                </div>
+                <p class="note-italic">This is a non-partisan initiative that requires no financial donations. It is a sincere call from European citizens to our American cousins, expressing our heartfelt solidarity with our friends in Greenland.</p>
+            </div>
+            <div class="col" style="text-align: center;">
+                <img src="img/greenland-eurofriends-en.jpg" alt="Support Greenland" class="img-slanted">
             </div>
         </section>
 
-        <section class="grid md:grid-cols-2 gap-8 mb-16 text-center">
-            <div class="space-y-4">
-                <h3 class="text-xl font-bold uppercase tracking-wide text-brand-blue">Tout comprendre en 2 minutes</h3>
-                <div class="aspect-video rounded-xl overflow-hidden shadow-md border-4 border-white bg-slate-100">
-                   <iframe 
-                        width="560" 
-                        height="315" 
-                        src="https://www.youtube.com/embed/3HJglJSPa5g" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
-                        allowfullscreen>
-                    </iframe>
+        <section class="row-2-col">
+            <div class="col">
+                <h3>Understand it all in 2 minutes</h3>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/tcoZEwUf7k0" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="space-y-4">
-                <h3 class="text-xl font-bold uppercase tracking-wide text-brand-blue">Présentation Complète</h3>
-                 <iframe class="scribd_iframe_embed" title="Opération Groënland FR" src="https://www.scribd.com/embeds/986911755/content?start_page=1&view_mode=slideshow&access_key=key-rAs2I3zYwqagC9ABhZZl" tabindex="0" data-auto-height="true" data-aspect-ratio="1.7790927021696252" scrolling="yes" width="100%" height="400" frameborder="0" ></iframe> 
+            <div class="col">
+                <h3>Full operation overview</h3>
+                <iframe class="scribd_iframe_embed" title="Operation Greenland EN" src="https://www.scribd.com/embeds/986957960/content?start_page=1&view_mode=slideshow&access_key=key-mJkp9xz3elHKKR2Ax8WN" data-auto-height="true" data-aspect-ratio="1.7790927021696252" scrolling="no" width="100%" height="400" frameborder="0" ></iframe>
             </div>
         </section>
 
-        <hr class="border-slate-200 mb-16">
+        <h2 class="section-title-center">3 actions to make an impact</h2>
 
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-10 text-center uppercase tracking-widest text-brand-blue">3 Actions pour Agir</h2>
-            <div class="grid lg:grid-cols-[4fr_3fr_3fr] gap-8 items-start">
-                
-                <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-brand-blue flex flex-col">
-                    <h4 class="font-bold text-2xl mb-4 uppercase text-brand-blue">Greenland Penpals</h4>
-                    <img src="img/greenland-penpals.jpg" alt="Greenland Penpals" class="w-full h-56 object-cover rounded-xl mb-6 shadow-sm">
-                    <div class="text-slate-700 space-y-4 text-left">
-                        <p>Nous collectons des cartes postales d'Europe avec des messages de soutien aux Groënlandais afin d'en envoyer plusieurs paquets à des maisons de retraite, centres culturels, établissements scolaires, mairies là-bas qui pourront les distribuer.</p>
-                        <p>Achetez une carte classique de votre coin d'Europe, écrivez un message simple ou recopiez l'un des modèles dans la présentation ci-dessus. Faites-le avec vos enfants, vos amis, vos proches et glissez les cartes dans une enveloppe à envoyer à l'adresse ci-dessous.</p>
-                        <p>Dépêchez-vous s'il vous plaît car nous voudrions les envoyer pour le <strong>14 février</strong> (fête des amis).</p>
-                    </div>
-                    <div class="mt-8 pt-6 border-t border-slate-100">
-                        <p class="font-bold text-sm uppercase text-slate-500 mb-2 text-center">Envoyez vos cartes à :</p>
-                        <address class="not-italic bg-slate-50 p-4 rounded-xl text-brand-blue font-bold text-center">
-                            Greenland Penpals<br>
-                            34 rue abbé Herbert<br>
-                            85000 La Roche-sur-Yon<br>
-                            FRANCE
-                        </address>
-                    </div>
+        <div class="action-card">
+            <div class="action-col-1">
+                <h3>Greenland Penpals</h3>
+                <img src="img/greenland-penpals.jpg" alt="Penpals">
+            </div>
+            <div class="action-col-2">
+                <p>We are collecting postcards with messages of support for the people of Greenland to send in packages to nursing homes, cultural centers, schools, and city halls there, so they can be distributed to the local residents.</p>
+                <p>Buy or create a postcard from where you live, write a simple message, or copy one of the templates in the presentation above. Do it with your children, your friends, and your loved ones, then place the cards in an envelope to be sent to the address shown here.</p>
+                <p>Please hurry, as we would like to ship them out in time for February 14th (Friends' Day).</p>
+            </div>
+            <div class="action-col-3">
+                <div class="address-box">
+                    Greenland Penpals<br>
+                    34 rue abbé Herbert<br>
+                    85000 La Roche-sur-Yon<br>
+                    FRANCE
                 </div>
+            </div>
+        </div>
 
-                <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-brand-blue flex flex-col">
-                    <h4 class="font-bold text-2xl mb-4 uppercase text-brand-blue">No Deal</h4>
-                    <img src="img/no-deal.jpg" alt="No Deal" class="w-full h-56 object-cover rounded-xl mb-6 shadow-sm">
-                    <div class="text-slate-700 space-y-4 text-left">
-                        <p>Nous invitons tous les citoyens américains et européens à partager les publications ci-dessous sur leurs réseaux sociaux pour interpeller leurs dirigeants et réaffirmer notre amitié de peuple à peuple.</p>
-                        <p>Nous diffusons également une tribune citoyenne auprès des grands médias américains et européens.</p>
-                    </div>
-                    <div class="mt-8 space-y-3">
-                        <a href="#" class="block w-full text-center bg-slate-100 hover:bg-slate-200 text-brand-blue font-bold py-3 rounded-xl transition-colors">Voir la tribune (PDF)</a>
-                        <div class="flex gap-2 text-xs">
-                            <a href="#" class="flex-1 text-center bg-blue-50 text-blue-600 font-bold py-2 rounded-lg hover:bg-blue-100 transition-colors">Partager sur X</a>
-                            <a href="#" class="flex-1 text-center bg-blue-50 text-blue-800 font-bold py-2 rounded-lg hover:bg-blue-100 transition-colors">Partager sur FB</a>
-                        </div>
-                    </div>
+        <div class="action-card">
+            <div class="action-col-1">
+                <h3>No Deal</h3>
+                <img src="img/no-deal.jpg" alt="No Deal Action">
+            </div>
+            <div class="action-col-2">
+                <p>We invite all American and European citizens to share the posts below on their social media networks to call on their leaders and reaffirm our friendship, from people to people.</p>
+                <p>We are also distributing a citizens' op-ed of friendship to the American people to major American and European media outlets.</p>
+            </div>
+            <div class="action-col-3">
+                <p style="font-weight: bold; margin-bottom: 5px;">3 posts ready to share</p>
+                <div class="social-link-list">
+                    <a href="img/postgreenlandfb.jpg" target="_blank">Facebook</a>
+                    <a href="img/postgreenlandig.jpg" target="_blank">Instagram</a>
+                    <a href="img/postgreenlandx.jpg" target="_blank">X</a>
                 </div>
-
-                <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-brand-blue flex flex-col">
-                    <h4 class="font-bold text-2xl mb-4 uppercase text-brand-blue">Hands Off Greenland</h4>
-                    <img src="img/hands-off-videos.jpg" alt="Hands Off Greenland" class="w-full h-56 object-cover rounded-xl mb-6 shadow-sm">
-                    <div class="text-slate-700 space-y-4 text-left">
-                        <p><strong>Envoyez</strong> de courts messages vidéo de soutien via notre carte contributive pour refuser la loi du plus fort. Filmez-vous quelques secondes en criant "HANDS OFF GREENLAND" !</p>
-                        <p>Allez sur Padlet, mettez votre ville et envoyez votre vidéo. Faisons en sorte que cette carte d'Europe s'illumine de milliers d'épingles !</p>
-                    </div>
-                    <div class="mt-8">
-                        <a href="#" class="block w-full text-center bg-brand-red hover:opacity-90 text-white font-bold py-4 rounded-xl shadow-lg transition-transform hover:scale-105">Participer sur Padlet</a>
-                    </div>
+                <div class="quote-text-box">
+                    “Greenland is not for sale; its future belongs to its people, not to the highest bidder. Join European citizens in standing up for international law and the right to self-determination. #handsoffgreenland #Greenland”
                 </div>
+                <a href="doc/citizenopedus.pdf" class="doc-link">📄 Citizen Op-Ed to our American friends</a>
+                <a href="doc/citizenEUinstitutions.pdf" class="doc-link">📄 Call to EU Institutions</a>
+            </div>
+        </div>
 
+        <div class="action-card">
+            <div class="action-col-1">
+                <h3>Hands Off Greenland</h3>
+                <img src="img/hands-off-videos.jpg" alt="Hands Off Greenland">
+            </div>
+            <div class="action-col-2">
+                <p>Send short video messages of support through our collaborative map to reject the "law of the strongest". Use your smartphone to record yourself for a few seconds shouting "HANDS OFF GREENLAND" or "HANDS OFF MR. TRUMP"!</p>
+                <p>Go to Padlet, enter your city, and upload your video. Let’s light up this world map with thousands of pins!</p>
+            </div>
+            <div class="action-col-3" style="display: flex; align-items: center; justify-content: center;">
+                <a href="https://padlet.com/greenlandeurofriends/handsoff" class="btn-action" target="_blank">Discover the map and join in!</a>
+            </div>
+        </div>
+
+        <section class="contact-section">
+            <h3>Any questions?</h3>
+            <p>Contact the Greenland Eurofriends collective<br>
+            <a href="mailto:greenland-eurofriends@proton.me" style="color: var(--blue-dark); font-weight: bold;">greenland-eurofriends@proton.me</a></p>
+            
+            <div class="social-row">
+                <span>Join Us / Rejoignez-nous :</span>
+                <a href="https://www.instagram.com/greenlandeurofriends/" class="social-icon-box" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.332 3.608 1.308.975.975 1.247 2.242 1.308 3.607.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.332 2.633-1.308 3.608-.975.975-2.242 1.247-3.607 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.332-3.608-1.308-.975-.975-1.247-2.242-1.308-3.607-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.332-2.633 1.308-3.608.975-.975 2.242-1.247 3.607-1.308 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    Instagram
+                </a>
+                <a href="https://x.com/GEurofriends" class="social-icon-box" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644z"/></svg>
+                    X
+                </a>
             </div>
         </section>
 
-        <section class="max-w-2xl mx-auto bg-slate-200 p-8 rounded-3xl text-center shadow-inner mb-12">
-            <h3 class="text-xl font-bold mb-2 uppercase tracking-wide">Une question ?</h3>
-            <p class="text-slate-600 mb-4 italic">Contactez le collectif <strong>Greenland Eurofriends</strong></p>
-            <a href="mailto:greenland-eurofriends@proton.me" class="text-xl md:text-2xl font-black text-brand-blue hover:underline transition-all">
-                greenland-eurofriends@proton.me
-            </a>
-        </section>
+    </div>
 
-    </main>
-
-    <footer class="bg-gradient-brand text-white py-16 text-center shadow-inner">
-        <p class="text-4xl md:text-5xl font-serif italic mb-4 tracking-widest">Peqatigiilluta</p>
-        <p class="text-sm opacity-80 uppercase tracking-[0.3em] font-bold">(Restons forts ensemble !)</p>
+    <footer>
+        <div class="footer-logo">
+            <img src="img/hands-off-greenland.png" alt="Hands Off Greenland Logo">
+        </div>
+        <div class="footer-motto">
+            <h4>Peqatigiilluta</h4>
+            <span>(We stand strong together!)</span>
+        </div>
     </footer>
 
 </body>
